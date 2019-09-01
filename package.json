@@ -8,11 +8,11 @@
     "react-scripts": "3.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "start-storybook -p 9009 -s public",
+    "react": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public"
   },
   "eslintConfig": {
@@ -34,6 +34,8 @@
     "@storybook/addon-actions": "^5.1.11",
     "@storybook/addon-links": "^5.1.11",
     "@storybook/addons": "^5.1.11",
-    "@storybook/react": "^5.1.11"
+    "@storybook/react": "^5.1.11",
+    "rc-align": "^2.4.5",
+    "react-transition-group": "^4.2.2"
   }
 }

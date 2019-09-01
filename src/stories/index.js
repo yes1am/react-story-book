@@ -1,23 +1,24 @@
-import React from 'react';
+import React,{ useState } from 'react';
 
 import { storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions';
 import { linkTo } from '@storybook/addon-links';
-import App from '../App.js'
+import Trigger from '../components/Trigger'
 
-import { Button, Welcome } from '@storybook/react/demo';
+const TriggerClick = () => {
+  const [visible, setVisible] = useState(false)
+  return <Trigger
+    action={['click']}
+    onVisibleChange={(visible) => { setVisible(visible) }}
+    popup={
+      <span>this is trigger click demo</span>
+    }
+    visible={visible}
+  >
+    <span>
+      click here
+    </span>
+  </Trigger>
+}
 
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />)
-.add('App',() => <App />);
-
-storiesOf('Welcome', module).add('to Storybook', () => <Welcome showApp={linkTo('Button')} />);
-
-storiesOf('Button', module)
-  .add('with text', () => <Button onClick={action('clicked')}>Hello Button</Button>)
-  .add('with some emoji', () => (
-    <Button onClick={action('clicked')}>
-      <span role="img" aria-label="so cool">
-        😀 😎 👍 💯
-      </span>
-    </Button>
-  ));
+storiesOf('Trigger', module).add('click', () => <TriggerClick />)
