@@ -1,24 +1,24 @@
 import React,{ useState } from 'react';
 
 import { storiesOf } from '@storybook/react';
-import { action } from '@storybook/addon-actions';
-import { linkTo } from '@storybook/addon-links';
 import Trigger from '../components/Trigger'
 
-const TriggerClick = () => {
+const TriggerType = ({type}) => {
   const [visible, setVisible] = useState(false)
   return <Trigger
-    action={['click']}
+    action={type}
     onVisibleChange={(visible) => { setVisible(visible) }}
     popup={
-      <span>this is trigger click demo</span>
+      <span>this is trigger {type} demo</span>
     }
     visible={visible}
   >
     <span>
-      click here
+      {type} here
     </span>
   </Trigger>
 }
 
-storiesOf('Trigger', module).add('click', () => <TriggerClick />)
+storiesOf('Trigger', module)
+.add('click', () => <TriggerType type='click' />)
+.add('hover', () => <TriggerType type='hover' />)

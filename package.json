@@ -31,11 +31,11 @@
     ]
   },
   "devDependencies": {
-    "@storybook/addon-actions": "^5.1.11",
-    "@storybook/addon-links": "^5.1.11",
-    "@storybook/addons": "^5.1.11",
-    "@storybook/react": "^5.1.11",
-    "rc-align": "^2.4.5",
-    "react-transition-group": "^4.2.2"
+    "@storybook/addon-actions": "5.1.11",
+    "@storybook/addon-links": "5.1.11",
+    "@storybook/addons": "5.1.11",
+    "@storybook/react": "5.1.11",
+    "rc-align": "2.4.5",
+    "react-transition-group": "4.2.2"
   }
 }

@@ -6,15 +6,21 @@ import './popup.css'
 
 const defaultStyle = {
   position: 'absolute',
-  transformOrigin: 'top',
-  background: 'red'
 }
 
-const transitionStyles = {
-  entering: { animation: 'fadeInDown 200ms' },
-  entered: { animation: 'none' },
-  exiting: { animation: 'fadeOutUp 200ms' },
-  exited: { animation: 'none' }
+const TRANSITION_STYLES = {
+  slideInDown: {
+    entering: { animation: 'fadeInDown 200ms' },
+    entered: { animation: 'none' },
+    exiting: { animation: 'fadeOutUp 200ms' },
+    exited: { animation: 'none' }
+  },
+  zoomInDown: {
+    entering: { animation: 'zoomInDown 200ms' },
+    entered: { animation: 'none' },
+    exiting: { animation: 'zoomOutUp 200ms' },
+    exited: { animation: 'none' }
+  }
 }
 
 class Popup extends Component {
@@ -33,7 +39,12 @@ class Popup extends Component {
     }
   }
   render () {
-    const { visible, children,align } = this.props
+    const { visible, children,align,onMouseLeave,onMouseEnter,action } = this.props
+    const domProps = {}
+    if(action === 'hover') {
+      domProps.onMouseLeave =onMouseLeave
+      domProps.onMouseEnter =onMouseEnter
+    }
     return (
       <Transition
         mountOnEnter
@@ -49,6 +60,7 @@ class Popup extends Component {
         in={visible}
       >
         {state => {
+          console.log(TRANSITION_STYLES['zoomInDown'][state])
           return <Align
             target={this.getTarget}
             monitorWindowResize
@@ -56,8 +68,10 @@ class Popup extends Component {
           >
             <div style={{
               ...defaultStyle,
-              ...transitionStyles[state]
-            }}>
+              ...TRANSITION_STYLES['zoomInDown'][state],
+            }}
+            {...domProps}
+            >
               {children}
             </div>
           </Align>
@@ -69,7 +83,8 @@ class Popup extends Component {
 
 Popup.defaultProps = {
   align: {
-    points: ['tl', 'bl']
+    points: ['tl', 'bl'],
+    // offset: [100, 200],
   }
 }
 
