@@ -1,0 +1,82 @@
+.notification-item {
+  transition: height 200ms ease-in-out;
+  display: flex;
+  box-sizing: border-box;
+  margin-bottom: 8px;
+}
+
+.notification-notice {
+  box-sizing: border-box;
+  max-width: 384px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  background: #FFFFFF;
+  box-shadow: 0 0 16px 0 rgba(0,0,0,0.10), 0 8px 16px 0 rgba(0,0,0,0.06);
+  border-radius: 4px;
+  display: flex;
+}
+
+.notification-notice-content {
+  font-family: Roboto-Regular;
+  font-size: 14px;
+  line-height: 16px;
+  color: #333333;
+}
+
+.notification-notice-content svg {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16px;
+  margin-right: 8px;
+}
+
+.notification {
+  position: absolute;
+  z-index: 1000;
+}
+
+.notification-fade-enter {
+  animation-duration: 200ms;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-play-state: paused;
+}
+
+.notification-fade-exit {
+  animation-duration: 200ms;
+  animation-fill-mode: both;
+  animation-timing-function: ease-in-out;
+  animation-play-state: paused;
+}
+
+.notification-fade-enter, .notification-fade-enter-active {
+  animation-name: animationIn;
+  animation-play-state: running;
+}
+
+.notification-fade-exit, .notification-fade-exit-active {
+  animation-name: animationOut;
+    animation-play-state: running;
+}
+
+@keyframes animationIn {
+  0% {
+    /* transform: translateY(-100%); */
+    opacity: 0;
+  }
+  100% {
+    /* transform: translateY(0); */
+    opacity: 1;
+  }
+}
+
+@keyframes animationOut {
+  0% {
+    /* transform: translateY(0); */
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    /* transform: translateY(-100%); */
+  }
+}
