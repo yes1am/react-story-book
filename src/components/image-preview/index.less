@@ -1,0 +1,37 @@
+.image-preview {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0px;
+  background: #0e0e0e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  &.is-small {
+    overflow: unset;
+  }
+  &.is-big {
+    overflow: auto;
+  }
+  > img {
+    -webkit-user-select: none;
+    margin: auto;
+    &.normal {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    &.is-small {
+      cursor: zoom-in;
+      max-width: 100%;
+      max-height: 100%;
+    }
+    &.is-big {
+      cursor: zoom-out;
+      max-width: unset;
+      max-height: unset;
+      position: absolute;
+    }
+  }
+}
