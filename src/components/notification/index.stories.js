@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import Notification from '.';
 
@@ -12,13 +12,22 @@ export default {
 
 let i = 0;
 
-export const One = () => (
-  <div onClick={
-    () => Notification.open({
-    message: `我是 toast ${i++}`
-  })}>
-    点击我
-  </div>
-)
+// 接受参数进行 toast 的示例
+const Toast = (props) => {
+  useEffect(() => {
+    Notification.open({
+      message: props.msg
+    })
+  }, [props.msg])
+  return null;
+}
 
+export const One = () => {
+  const [msg, setMsg] = useState('我是 toast');
+  return <div onClick={() => setMsg(`我是 toast ${i++}`)}>
+    点击我
+    <Toast msg={msg} />
+  </div>
+}
+  
 One.storyName = '提醒';
