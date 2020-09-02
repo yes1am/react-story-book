@@ -1,3 +1,6 @@
 ## React 组件
 
-记录用过的一些组件，不求完美但求好用
+重复"造"轮子: https://yes1am.github.io/react-story-book/
+
+- modal 组件原型: https://github.com/reactjs/react-modal
+- react-image 组件原型: https://github.com/mbrevda/react-image
