@@ -1,0 +1,36 @@
+.react-upload {
+  &-wrapper {
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+  }
+
+  &__input {
+    display: none;
+  }
+
+  &-dragger {
+    position: relative;
+    padding: 32px;
+    overflow: hidden;
+    background-color: #fafafa;
+    border: 1px dashed #d8d8d8;
+    border-radius: 4px;
+    transition: border-color 0.2s cubic-bezier(.42, 0, .58, 1);
+
+    &.disabled {
+      cursor: none;
+      background-color: #fafafa;
+    }
+
+    &:hover:not(.disabled) {
+      border-color: #1791f2;
+    }
+
+    &.is-dragover {
+      background-color: #1791f2;
+      border: 1px dashed #1791f2;
+    }
+  }
+}

@@ -1,0 +1,260 @@
+// Color variables (appears count calculates by raw css)
+@color0: #b7b7b7; // Appears 8 times
+@color1: #999999; // Appears 5 times
+@color2: #eeeeee; // Appears 3 times
+@color3: #ff4742; // Appears 2 times
+@color4: #e5e5e5; // Appears 2 times
+
+// Width variables (appears count calculates by raw css)
+@width0: 100%; // Appears 3 times
+@width1: 16px; // Appears 9 times
+@width2: 8px; // Appears 3 times
+@width3: 1px; // Appears 4 times
+
+// Height variables (appears count calculates by raw css)
+@height0: calc(100% - 14px); // Appears 2 times
+@height2: 16px; // Appears 9 times
+@height10: 100%; // Appears 2 times
+@height11: 8px; // Appears 3 times
+
+.react-input {
+	background-color: #ffffff;
+	line-height: 0;
+}
+.react-input__inner {
+	border-collapse: separate;
+	border-radius: 4px;
+	border-spacing: 0;
+	border: 1px solid @color2;
+	box-sizing: border-box;
+	display: inline-table;
+	font-size: 14px;
+	height: 32px;
+	outline: none;
+	position: relative;
+	transition: border 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+	width: @width0;
+	&:hover {
+		border-color: @color0;
+	}
+	.react-input__prefix-icon.react-icon {
+		height: @height2;
+		width: @width1;
+	}
+	.react-input__suffix-icon.react-icon {
+		height: @height2;
+		width: @width1;
+	}
+	.react-input__clear-btn.react-icon {
+		height: @height2;
+		width: @width1;
+	}
+	.react-input__input {
+		font-size: 14px;
+		height: 30px;
+		padding: 0 12px;
+	}
+}
+.react-input__inner.focused {
+	border-color: @color0;
+}
+.react-input__inner--small {
+	font-size: 12px;
+	height: 24px;
+	.react-input__prefix-icon.react-icon {
+		height: @height11;
+		width: @width2;
+	}
+	.react-input__suffix-icon.react-icon {
+		height: @height11;
+		width: @width2;
+	}
+	.react-input__clear-btn.react-icon {
+		height: @height11;
+		width: @width2;
+	}
+	.react-input__input {
+		font-size: 12px;
+		height: 22px;
+		padding: 0 8px;
+	}
+}
+.react-input__inner--large {
+	height: 40px;
+	.react-input__prefix-icon.react-icon {
+		height: @height2;
+		width: @width1;
+	}
+	.react-input__suffix-icon.react-icon {
+		height: @height2;
+		width: @width1;
+	}
+	.react-input__clear-btn.react-icon {
+		height: @height2;
+		width: @width1;
+	}
+	.react-input__input {
+		font-size: 14px;
+		height: 3@height11;
+		padding: 0 12px;
+	}
+}
+.react-input__inner--x-large {
+	font-size: 16px;
+	height: 4@height11;
+	.react-input__prefix-icon.react-icon {
+		height: @height2;
+		width: @width1;
+	}
+	.react-input__suffix-icon.react-icon {
+		height: @height2;
+		width: @width1;
+	}
+	.react-input__clear-btn.react-icon {
+		height: @height2;
+		width: @width1;
+	}
+	.react-input__input {
+		font-size: 16px;
+		height: 46px;
+		padding: 0 16px;
+	}
+}
+.react-input__inner.error {
+	border-color: @color3;
+	overflow: hidden;
+}
+.react-input__inner.disabled {
+	background-color: #fafafa;
+	border-color: @color4;
+	color: @color0;
+	cursor: not-allowed;
+	&:hover {
+		border-color: @color4;
+	}
+	.react-input__input {
+		color: @color0;
+		cursor: not-allowed;
+	}
+}
+.react-input__inner.active-clearable {
+	&:hover {
+		.react-input__clear-btn {
+			display: inline-block;
+		}
+	}
+}
+.react-input__input {
+	background-color: inherit;
+	border: 0;
+	box-sizing: border-box;
+	color: #333333;
+	display: table-cell;
+	outline: none;
+	padding: 0;
+	vertical-align: middle;
+	width: @width0;
+	&::placeholder {
+    color: @color0;
+	}
+}
+.react-input__prefix {
+	color: @color1;
+	display: table-cell;
+	height: @height10;
+	line-height: 0;
+	padding-left: 8px;
+	position: relative;
+	vertical-align: middle;
+	white-space: nowrap;
+	width: @width3;
+	.react-icon {
+		cursor: pointer;
+	}
+}
+.react-input__suffix {
+	color: @color1;
+	display: table-cell;
+	height: @height10;
+	line-height: 0;
+	padding-right: 8px;
+	position: relative;
+	vertical-align: middle;
+	white-space: nowrap;
+	width: @width3;
+	.react-icon {
+		cursor: pointer;
+	}
+	.react-input__suffix-split {
+		margin-left: 0;
+	}
+}
+.react-input__clear-btn {
+	color: @color0;
+	&:hover {
+		color: #6e6e6e;
+	}
+}
+.react-input__clear-btn.react-icon {
+	display: none;
+	fill: @color0;
+}
+.react-input__count {
+	color: @color1;
+	font-size: 14px;
+}
+.react-input__prefix-split {
+	background: @color2;
+	display: inline-block;
+	height: calc(@height10 - 14px);
+	margin-left: 8px;
+	vertical-align: middle;
+	width: @width3;
+}
+.react-input__suffix-split {
+	background: @color2;
+	display: inline-block;
+	height: calc(@height10 - 14px);
+	margin-left: 8px;
+	margin-right: 8px;
+	vertical-align: middle;
+	width: @width3;
+}
+.react-input__area {
+	border: 0;
+	box-sizing: border-box;
+	font-size: 14px;
+	outline: none;
+	overflow: auto;
+	vertical-align: top;
+	width: @width0;
+	.react-input__inner {
+		display: inline-block;
+		padding: 8px 12px;
+	}
+	.react-input__count {
+		color: @color1;
+		float: right;
+		line-height: 20px;
+		margin-top: 4px;
+	}
+}
+.react-input__area>textarea {
+	&::placeholder {
+			color: @color0;
+	}
+}
+.react-input__error-msg {
+	color: @color3;
+	font-size: 12px;
+	line-height: 1em;
+	margin: 4px 0;
+	word-break: normal;
+	word-wrap: break-word;
+}
+.react-input__help-text {
+	color: @color1;
+	font-size: 12px;
+	line-height: 14px;
+	margin-top: 4px;
+}

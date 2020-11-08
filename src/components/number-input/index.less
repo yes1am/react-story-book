@@ -1,0 +1,168 @@
+// Color variables (appears count calculates by raw css)
+@color0: #e5e5e5; // Appears 2 times
+@color1: #b7b7b7; // Appears 2 times
+
+// Width variables (appears count calculates by raw css)
+@width1: 100%; // Appears 2 times
+@width2: 16px; // Appears 4 times
+
+// Height variables (appears count calculates by raw css)
+@height1: 100%; // Appears 2 times
+@height2: 16px; // Appears 3 times
+
+.react-number-input {
+	.react-input__input {
+		padding-right: 12px;
+	}
+	.react-input__inner {
+		padding-right: 0;
+	}
+	.react-input__suffix {
+		padding-left: 0;
+	}
+	&:not(.disabled) {
+		hover {
+			.react-number-input__suffix {
+				opacity: 0;
+			}
+			.react-number-input__controls {
+				opacity: 1;
+				z-index: 2;
+			}
+		}
+	}
+}
+.react-number-input__suffix {
+	align-items: center;
+	display: flex;
+	height: @height1;
+	padding-right: 12px;
+	vertical-align: middle;
+}
+.react-number-input__suffix-split {
+	background: #eeeeee;
+	display: inline-block;
+	height: calc(@height1 - 14px);
+	margin-right: 8px;
+	vertical-align: middle;
+	width: 1px;
+}
+.react-number-input--no-suffix {
+	.react-text-input__inner {
+		padding-right: 0;
+	}
+}
+.react-number-input__controls {
+	background: #ffffff;
+	border-bottom-right-radius: 4px;
+	border-left: 1px solid @color0;
+	border-top-right-radius: 4px;
+	cursor: pointer;
+	display: inline-block;
+	height: @height1;
+	opacity: 0;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 0;
+	vertical-align: middle;
+	width: 24px;
+	&::before {
+    background: @color0;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-0.5px);
+    width: @width1;
+	}
+}
+.react-number-input__control {
+	height: 50%;
+	line-height: @height2;
+	overflow: hidden;
+	position: absolute;
+	transition: opacity 0.2s cubic-bezier(0.42, 0, 0.58, 1);
+	width: @width1;
+	.react-icon {
+		box-sizing: initial;
+		fill: #999999;
+		height: @height2;
+		left: 50%;
+		position: absolute;
+		transform: translate(-50%, -50%);
+		transition: transform 0.2s;
+		user-select: none;
+		width: @width2;
+	}
+	&:hover {
+		.react-icon {
+			fill: #333333;
+		}
+	}
+}
+.react-number-input__control.up {
+	top: 0;
+	.react-icon {
+		top: 45%;
+	}
+}
+.react-number-input__control.down {
+	bottom: 0;
+	.react-icon {
+		top: 55%;
+	}
+}
+.react-number-input__control.disabled {
+	.react-icon {
+		cursor: not-allowed;
+		fill: @color1;
+		opacity: 0.4;
+	}
+	&:hover {
+		.react-icon {
+			fill: @color1;
+		}
+	}
+}
+.react-number-input--small {
+	.react-number-input__control {
+		.react-icon {
+			height: 14px;
+			width: 14px;
+		}
+	}
+	.react-number-input__controls {
+		width: @width2;
+	}
+}
+.react-number-input--large {
+	.react-number-input__control {
+		.react-icon {
+			height: @height2;
+			width: @width2;
+		}
+	}
+}
+.react-number-input--x-large {
+	.react-number-input__control {
+		.react-icon {
+			height: @height2;
+			width: @width2;
+		}
+	}
+	.react-number-input__control.up {
+		.react-icon {
+			top: 50%;
+		}
+	}
+	.react-number-input__control.down {
+		.react-icon {
+			top: 50%;
+		}
+	}
+	.react-number-input__controls {
+		width: 28px;
+	}
+}

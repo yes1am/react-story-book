@@ -1,0 +1,35 @@
+.react-input-group {
+	display: flex;
+}
+.react-input-group__prepend {
+	.react-input__inner {
+		border-bottom-right-radius: 0;
+		border-right: 0;
+		border-top-right-radius: 0;
+	}
+	.react-selector {
+		border-bottom-right-radius: 0;
+		border-right: 0;
+		border-top-right-radius: 0;
+	}
+	&:hover+.react-input-group__append {
+		.react-input__inner {
+			border-left-color: #b7b7b7;
+		}
+	}
+}
+.react-input-group__append {
+	flex: 1;
+	.react-input__inner {
+		border-bottom-left-radius: 0;
+		border-top-left-radius: 0;
+	}
+	.react-selector {
+		border-bottom-left-radius: 0;
+		border-top-left-radius: 0;
+	}
+	.react-button {
+		border-bottom-left-radius: 0;
+		border-top-left-radius: 0;
+	}
+}

@@ -16,6 +16,7 @@
     "style-loader": "^1.2.1"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "lodash.debounce": "^4.0.8",
     "rc-align": "^4.0.3",
     "react-portal": "^4.2.1",
